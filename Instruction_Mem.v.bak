@@ -1,0 +1,58 @@
+module Instruction_Memory ( input [31:0] read_address, output [31:0] instruction);
+	reg [31:0] Imemory [255:0];
+	integer k;
+	assign instruction = Imemory[read_address];
+	initial
+	begin
+	    for (k=0; k<256; k=k+1) 
+            begin  
+			      Imemory[k] = 32'b0;
+			end
+        //addi x18,x0,0x42
+        Imemory[0] =32'b0000_0100_0010_00000_000_10010_0010011;
+        //addi x19,x0,0x42
+        Imemory[4] =32'b0000_0100_0010_00000_000_10011_0010011;
+        //bne  x18,x19,0x04
+        Imemory[8] =32'b0000000_10011_10010_001_00100_1100011;
+        //addi x19,x0,-0x42
+        Imemory[12]=32'b1111_1011_1110_00000_000_10011_0010011;
+        //bne  x18,x19,0x08
+        Imemory[16]=32'b0000000_10011_10010_001_01000_1100011;
+        //nop
+        Imemory[20]=32'd0;
+        //blt  x18,x19,0x08
+        Imemory[24]=32'b0000000_10011_10010_100_01000_1100011;
+        //nop
+        Imemory[28]=32'd0;
+        //blt  x19,x18,0x08
+        Imemory[32]=32'b0000000_10010_10011_100_01000_1100011;
+        //nop
+        Imemory[36]=32'd0;
+        //bltu x19,x18,0x08
+        Imemory[40]=32'b0000000_10010_10011_110_01000_1100011;
+        //nop
+        Imemory[44]=32'd0;
+        //bltu x18,x19,0x08
+        Imemory[48]=32'b0000000_10011_10010_110_01000_1100011;
+        //nop
+        Imemory[52]=32'd0;
+        //bge  x19,x18,0x08
+        Imemory[56]=32'b0000000_10010_10011_101_01000_1100011;
+        //nop
+        Imemory[60]=32'd0;
+        //bge  x18,x19,0x08
+        Imemory[64]=32'b0000000_10011_10010_101_01000_1100011;
+        //nop
+        Imemory[68]=32'd0;
+        //bgeu x18,x19,0x08
+        Imemory[72]=32'b0000000_10011_10010_111_01000_1100011;
+        //nop
+        Imemory[76]=32'd0;
+        //bgeu x19,x18,0x08
+        Imemory[80]=32'b0000000_10010_10011_111_01000_1100011;
+        //nop
+        Imemory[84]=32'd0;
+        //jal  x18,0x08
+        Imemory[88]=32'b0000_0000_1000_0000_0000_10010_1101111;
+	end
+endmodule

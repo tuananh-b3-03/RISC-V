@@ -1,0 +1,135 @@
+# vsim -do {run -all; quit} -c tb_trace 
+# Loading work.tb_trace
+# Loading work.RiscV_Datapath
+# ** Warning: (vsim-3009) [TSCALE] - Module 'RiscV_Datapath' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut
+# Loading work.Fetch_stage
+# ** Warning: (vsim-3009) [TSCALE] - Module 'Fetch_stage' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp1
+# Loading work.Program_Counter
+# ** Warning: (vsim-3009) [TSCALE] - Module 'Program_Counter' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp1/comp1
+# Loading work.PC_adder
+# ** Warning: (vsim-3009) [TSCALE] - Module 'PC_adder' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp1/comp2
+# Loading work.Instruction_Memory
+# ** Warning: (vsim-3009) [TSCALE] - Module 'Instruction_Memory' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp1/comp3
+# Loading work.mux2_1
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux2_1' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp1/comp4
+# Loading work.F_to_D_register
+# ** Warning: (vsim-3009) [TSCALE] - Module 'F_to_D_register' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp2
+# Loading work.Decode_stage
+# ** Warning: (vsim-3009) [TSCALE] - Module 'Decode_stage' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp3
+# Loading work.Control_Unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'Control_Unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp3/comp6
+# Loading work.Register_File
+# ** Warning: (vsim-3009) [TSCALE] - Module 'Register_File' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp3/comp7
+# Loading work.extend
+# ** Warning: (vsim-3009) [TSCALE] - Module 'extend' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp3/comp8
+# Loading work.D_to_E_register
+# ** Warning: (vsim-3009) [TSCALE] - Module 'D_to_E_register' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp9
+# Loading work.mux4_1
+# ** Warning: (vsim-3009) [TSCALE] - Module 'mux4_1' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp13
+# Loading work.alu
+# ** Warning: (vsim-3009) [TSCALE] - Module 'alu' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp15
+# Loading work.PC_branch_adder
+# ** Warning: (vsim-3009) [TSCALE] - Module 'PC_branch_adder' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp18
+# Loading work.E_to_M_register
+# ** Warning: (vsim-3009) [TSCALE] - Module 'E_to_M_register' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp19
+# Loading work.Data_Memory
+# ** Warning: (vsim-3009) [TSCALE] - Module 'Data_Memory' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp20
+# Loading work.M_to_W_register
+# ** Warning: (vsim-3009) [TSCALE] - Module 'M_to_W_register' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp21
+# Loading work.Hazard_unit
+# ** Warning: (vsim-3009) [TSCALE] - Module 'Hazard_unit' does not have a `timescale directive in effect, but previous modules do.
+#         Region: /tb_trace/dut/comp23
+# ** Warning: (vsim-3017) RiscV_Datapath.v(156): [TFMPC] - Too few port connections. Expected 18, found 17.
+#         Region: /tb_trace/dut/comp23
+# ** Warning: (vsim-3722) RiscV_Datapath.v(156): [TFMPC] - Missing connection for port 'lwStall'.
+# run -all 
+# AddI
+# 
+# 1,00000000,00000000,00000000,0,0,0,00000000,00000000
+# 2,00000001,00000000,00000001,0,1,18,00000000,00000000
+# Add
+# 
+# 3,00000003,00000004,00000007,0,3,19,00000000,00000000
+# Store
+# 
+# 4,00000001,00000008,00000008,18,20,20,00000000,00000000
+# Load
+# 
+# 5,00000004,0000000c,0000000f,18,20,3,00000000,00000001
+# BEQ
+# 
+# 6,00000004,00000010,00000013,18,3,21,00000000,00000000
+# 7,00000000,00000000,00000000,0,0,0,00000001,00000000
+# JALR
+# 
+# 8,00000000,00000014,00000020,19,21,12,00000000,00000001
+# Load
+# 
+# 9,xxxxxxxx,00000018,00000008,0,8,1,00000000,00000000
+# 10,00000000,00000000,00000000,0,0,0,xxxxxxxx,00000000
+# Add
+# 
+# 11,00000000,00000000,00000000,0,0,0,00000000,00000000
+# Store
+# 
+# 12,00000002,00000008,00000008,18,20,20,00000000,00000001
+# Load
+# 
+# 13,00000004,0000000c,0000000f,18,20,3,00000000,00000002
+# BEQ
+# 
+# 14,00000004,00000010,00000013,18,3,21,00000001,00000000
+# 15,00000000,00000000,00000000,0,0,0,00000002,00000000
+# JALR
+# 
+# 16,00000000,00000014,00000020,19,21,12,00000000,00000002
+# Load
+# 
+# 17,xxxxxxxx,00000018,00000008,0,8,1,00000000,00000000
+# 18,00000000,00000000,00000000,0,0,0,xxxxxxxx,00000000
+# Add
+# 
+# 19,00000000,00000000,00000000,0,0,0,00000000,00000000
+# Store
+# 
+# 20,00000003,00000008,00000008,18,20,20,00000000,00000002
+# Load
+# 
+# 21,00000004,0000000c,0000000f,18,20,3,00000000,00000003
+# BEQ
+# 
+# 22,00000004,00000010,00000013,18,3,21,00000002,00000000
+# 23,00000000,00000000,00000000,0,0,0,00000003,00000000
+# JALR
+# 
+# 24,00000001,00000014,00000020,19,21,12,00000000,00000003
+# 25,00000000,00000000,00000000,0,0,0,00000000,00000000
+# JALR
+# 
+# 26,00000000,00000000,00000000,0,0,0,00000000,00000000
+# 27,xxxxxxxx,00000020,00000020,0,0,1,00000000,00000000
+# 28,00000000,00000000,00000000,0,0,0,xxxxxxxx,00000000
+# JALR
+# 
+# 29,00000000,00000000,00000000,0,0,0,00000000,00000000
+# 30,xxxxxxxx,00000020,00000020,0,0,1,00000000,00000000
+# ** Note: $finish    : tb_trace.v(60)
+#    Time: 312 ns  Iteration: 0  Instance: /tb_trace

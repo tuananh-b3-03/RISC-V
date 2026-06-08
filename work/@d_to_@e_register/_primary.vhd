@@ -1,0 +1,43 @@
+library verilog;
+use verilog.vl_types.all;
+entity D_to_E_register is
+    port(
+        clk             : in     vl_logic;
+        reset           : in     vl_logic;
+        FlushE          : in     vl_logic;
+        RegWriteD       : in     vl_logic;
+        ResultSrcD      : in     vl_logic_vector(1 downto 0);
+        MemWriteD       : in     vl_logic;
+        JumpD           : in     vl_logic;
+        BranchD         : in     vl_logic;
+        JumpR           : in     vl_logic;
+        UIPC_add        : in     vl_logic;
+        ALUSrcD         : in     vl_logic;
+        ALUCtrlD        : in     vl_logic_vector(4 downto 0);
+        Rs1             : in     vl_logic_vector(4 downto 0);
+        Rs2             : in     vl_logic_vector(4 downto 0);
+        Read_1D         : in     vl_logic_vector(31 downto 0);
+        Read_2D         : in     vl_logic_vector(31 downto 0);
+        PC_nowD         : in     vl_logic_vector(31 downto 0);
+        write_addrD     : in     vl_logic_vector(4 downto 0);
+        ImmExtD         : in     vl_logic_vector(31 downto 0);
+        PC_plus4D       : in     vl_logic_vector(31 downto 0);
+        Rs1E            : out    vl_logic_vector(4 downto 0);
+        Rs2E            : out    vl_logic_vector(4 downto 0);
+        Read_1E         : out    vl_logic_vector(31 downto 0);
+        Read_2E         : out    vl_logic_vector(31 downto 0);
+        PC_nowE         : out    vl_logic_vector(31 downto 0);
+        write_addrE     : out    vl_logic_vector(4 downto 0);
+        ImmExtE         : out    vl_logic_vector(31 downto 0);
+        PC_plus4E       : out    vl_logic_vector(31 downto 0);
+        RegWriteE       : out    vl_logic;
+        ResultSrcE      : out    vl_logic_vector(1 downto 0);
+        MemWriteE       : out    vl_logic;
+        JumpE           : out    vl_logic;
+        BranchE         : out    vl_logic;
+        ALUSrcE         : out    vl_logic;
+        ALUCtrlE        : out    vl_logic_vector(4 downto 0);
+        JumpRE          : out    vl_logic;
+        UIPC_addE       : out    vl_logic
+    );
+end D_to_E_register;
